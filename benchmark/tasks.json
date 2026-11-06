@@ -1,0 +1,82 @@
+[
+  {
+    "id": "task_001",
+    "description": "[Đơn giản 1] Tính 15 * 17 và lưu kết quả vào file result.txt",
+    "instruction": "Tính 15 nhân 17 bằng công cụ calculator. Lưu kết quả số nguyên vào file result.txt bằng công cụ file.",
+    "eval_type": "functional",
+    "eval_script": "test -f result.txt && grep -q 255 result.txt && echo PASS",
+    "max_steps": 6
+  },
+  {
+    "id": "task_002",
+    "description": "[Đơn giản 2] Ghi chuỗi chuẩn vào file greeting.txt và xác nhận nội dung",
+    "instruction": "Hãy dùng công cụ file để ghi chính xác chuỗi 'Hello_OOP_Agent_2026' vào file greeting.txt.",
+    "eval_type": "functional",
+    "eval_script": "test -f greeting.txt && grep -q 'Hello_OOP_Agent_2026' greeting.txt && echo PASS",
+    "max_steps": 6
+  },
+  {
+    "id": "task_003",
+    "description": "[Đơn giản 3] Tính biểu thức hỗn hợp có lũy thừa và ngoặc đơn",
+    "instruction": "Sử dụng công cụ calculator để tính biểu thức (125 + 375) / 25 + 2^5 và trả về kết quả trong câu trả lời cuối cùng.",
+    "eval_type": "keyword",
+    "expected_keywords": ["52"],
+    "max_steps": 5
+  },
+  {
+    "id": "task_004",
+    "description": "[Đơn giản 4] Lấy thông tin ngày giờ hệ thống hiện tại",
+    "instruction": "Hãy gọi công cụ datetime_info để lấy thời gian hệ thống hiện tại và cho biết năm hiện tại trong câu trả lời cuối cùng.",
+    "eval_type": "keyword",
+    "expected_keywords": ["2026"],
+    "max_steps": 5
+  },
+  {
+    "id": "task_005",
+    "description": "[Trung bình 1] Kết hợp Calculator -> SQLite Memory -> File",
+    "instruction": "Bước 1: Tính 24 * 15 bằng calculator. Bước 2: Lưu kết quả vừa tính vào công cụ memory (action: save, key: 'score_threshold'). Bước 3: Ghi chuỗi 'SAVED_360' vào file mem_status.txt.",
+    "eval_type": "functional",
+    "eval_script": "test -f mem_status.txt && grep -q 'SAVED_360' mem_status.txt && echo PASS",
+    "max_steps": 8
+  },
+  {
+    "id": "task_006",
+    "description": "[Trung bình 2] Trích xuất dữ liệu bằng json_query và lưu ra file cấu hình",
+    "instruction": "Sử dụng công cụ json_query để lấy giá trị của khóa 'port' từ chuỗi JSON '{\"host\":\"localhost\",\"port\":\"11434\"}'. Sau đó ghi giá trị port đó vào file ollama_port.txt.",
+    "eval_type": "functional",
+    "eval_script": "test -f ollama_port.txt && grep -q '11434' ollama_port.txt && echo PASS",
+    "max_steps": 8
+  },
+  {
+    "id": "task_007",
+    "description": "[Trung bình 3] Chuỗi 3 công cụ: Exec tạo file -> File đọc dữ liệu -> Calculator nhân 3 -> File ghi kết quả",
+    "instruction": "Dùng exec chạy lệnh 'echo 42 > input_num.txt'. Sau đó đọc file input_num.txt, dùng calculator nhân giá trị đó với 3, rồi ghi kết quả vào file tripled.txt.",
+    "eval_type": "functional",
+    "eval_script": "test -f tripled.txt && grep -q '126' tripled.txt && echo PASS",
+    "max_steps": 10
+  },
+  {
+    "id": "task_008",
+    "description": "[Trung bình 4] Tính toán và rẽ nhánh có điều kiện khi ghi file",
+    "instruction": "Dùng calculator tính 19 * 6. Nếu kết quả lớn hơn 100 thì ghi chuỗi 'HIGH_114' vào file level.txt, ngược lại nếu nhỏ hơn hoặc bằng 100 thì ghi 'LOW' vào file level.txt.",
+    "eval_type": "functional",
+    "eval_script": "test -f level.txt && grep -q 'HIGH_114' level.txt && echo PASS",
+    "max_steps": 8
+  },
+  {
+    "id": "task_009",
+    "description": "[Khó 1] Multi-step tự quyết định thứ tự: Kiểm tra môi trường, lưu và truy vấn SQLite, tính toán và xuất báo cáo",
+    "instruction": "Thực hiện quy trình kiểm toán sau: (1) Gọi system_inspect để lấy thư mục làm việc hiện tại; (2) Lưu thông tin đó vào memory với key 'audit_cwd'; (3) Truy vấn lại memory với query 'audit_cwd'; (4) Tính (18 * 18) - 24 bằng calculator; (5) Ghi kết quả số học kèm chữ 'VERIFIED' (ví dụ: '300_VERIFIED') vào file audit_report.txt.",
+    "eval_type": "functional",
+    "eval_script": "test -f audit_report.txt && grep -q '300' audit_report.txt && grep -q 'VERIFIED' audit_report.txt && echo PASS",
+    "max_steps": 12
+  },
+  {
+    "id": "task_010",
+    "description": "[Khó 2] Multi-step tổng hợp: JSON Query -> Lũy thừa Calculator -> SQLite Memory -> Shell Exec kiểm chứng",
+    "instruction": "Hãy giải bài toán nhiều bước: Trích xuất trường 'base' từ chuỗi JSON '{\"base\":\"12\"}' bằng json_query. Lấy số đó tính biểu thức '12^2 + 56' bằng calculator. Lưu kết quả tìm được vào memory với key 'final_metric'. Cuối cùng ghi chuỗi 'METRIC=200' vào file pipeline_out.txt.",
+    "eval_type": "functional",
+    "eval_script": "test -f pipeline_out.txt && grep -q 'METRIC=200' pipeline_out.txt && echo PASS",
+    "max_steps": 12
+  }
+]

@@ -1,0 +1,88 @@
+{
+  "model": "qwen3.8:27b",
+  "passed_tasks": 10,
+  "results": [
+    {
+      "eval_reason": "Functional eval_script succeeded (cross-platform native verification): PASS",
+      "score": 1.0,
+      "success": true,
+      "task_id": "task_001",
+      "total_time_ms": 41665,
+      "total_tokens": 3861
+    },
+    {
+      "eval_reason": "Functional eval_script succeeded (cross-platform native verification): PASS",
+      "score": 1.0,
+      "success": true,
+      "task_id": "task_002",
+      "total_time_ms": 17551,
+      "total_tokens": 2030
+    },
+    {
+      "eval_reason": "Matched 1/1 expected keywords.",
+      "score": 1.0,
+      "success": true,
+      "task_id": "task_003",
+      "total_time_ms": 23870,
+      "total_tokens": 2233
+    },
+    {
+      "eval_reason": "Matched 1/1 expected keywords.",
+      "score": 1.0,
+      "success": true,
+      "task_id": "task_004",
+      "total_time_ms": 19908,
+      "total_tokens": 2073
+    },
+    {
+      "eval_reason": "Functional eval_script succeeded (cross-platform native verification): PASS",
+      "score": 1.0,
+      "success": true,
+      "task_id": "task_005",
+      "total_time_ms": 46181,
+      "total_tokens": 6455
+    },
+    {
+      "eval_reason": "Functional eval_script succeeded (cross-platform native verification): PASS",
+      "score": 1.0,
+      "success": true,
+      "task_id": "task_006",
+      "total_time_ms": 34549,
+      "total_tokens": 3465
+    },
+    {
+      "eval_reason": "Functional eval_script succeeded (cross-platform native verification): PASS",
+      "score": 1.0,
+      "success": true,
+      "task_id": "task_007",
+      "total_time_ms": 47411,
+      "total_tokens": 8034
+    },
+    {
+      "eval_reason": "Functional eval_script succeeded (cross-platform native verification): PASS",
+      "score": 1.0,
+      "success": true,
+      "task_id": "task_008",
+      "total_time_ms": 30881,
+      "total_tokens": 4031
+    },
+    {
+      "eval_reason": "Functional eval_script succeeded (cross-platform native verification): PASS",
+      "score": 1.0,
+      "success": true,
+      "task_id": "task_009",
+      "total_time_ms": 71615,
+      "total_tokens": 11007
+    },
+    {
+      "eval_reason": "Functional eval_script succeeded (cross-platform native verification): PASS",
+      "score": 1.0,
+      "success": true,
+      "task_id": "task_010",
+      "total_time_ms": 54806,
+      "total_tokens": 8512
+    }
+  ],
+  "success_rate_percent": 100.0,
+  "total_tasks": 10
+}
